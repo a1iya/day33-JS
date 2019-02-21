@@ -8,14 +8,14 @@ const books = [
 
 console.log("Est-ce que tous les livres ont été au moins empruntés une fois ?");
 let rented = books.map(e => e.rented);
-console.log(rented);
 let allRented = true;
 for(let i = 0 ; i<rented ; i++) {
+	//test de la validité de l'élement. s'il est présent avec une valeur à 0, alors jamais emprunté
 	if(typeof rented[i] === 'undefined' || rented[i] < 1)
 		allRented = false;
 }
-console.log(allRented);
-
+console.log(allRented ? 'oui' : 'non');
+// reduce choisit 1 élement qui correspond à la comparaison spécifiée. tous les éléments seront comparés entre eux 2 par 2
 console.log("Quel est livre le plus emprunté ?");
 let highestRented = Object.values(books).reduce((a, b) => a.rented > b.rented ? a : b);
 console.log(highestRented);
@@ -24,6 +24,7 @@ console.log("Quel est le livre le moins emprunté ?");
 let lessRented = Object.values(books).reduce((a, b) => a.rented < b.rented ? a : b);
 console.log(lessRented);
 
+// filter sert à filtrer une liste qui correspond à la condition spécifiée
 console.log("Trouve le livre avec l'ID: 873495");
 console.log(books.filter(b => b.id == 873495));
 
