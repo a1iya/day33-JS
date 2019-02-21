@@ -18,10 +18,8 @@ console.log(entrepreneurs.filter(e=> e.year >=1970 && e.year <=1979));
 
 
 console.log("Sors une array qui combien le prénom et le nom des entrepreneurs");
-let prenoms = entrepreneurs.map(e => e.first);
-let noms = entrepreneurs.map(e => e.last);
-console.log(prenoms);
-console.log(noms);
+let prenomnom = entrepreneurs.map(e=> e.first + ' ' + e.last);
+console.log(prenomnom);
 
 console.log("Quel âge aurait chaque inventeur aujourd'hui ?");
 for(let i = 0 ; i<entrepreneurs.length ; i++) {
